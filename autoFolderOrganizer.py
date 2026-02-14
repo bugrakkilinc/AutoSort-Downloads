@@ -20,14 +20,18 @@ CATEGORIES = {
 }
 
 for name in file_names:
+    
+    if name.endswith(".part") or name.endswith(".crdownload"):
+        continue
+    if os.path.exists(os.path.join(BASE_DIR, name + ".part")):
+        continue
     dot_position = name.rfind(".")
     if dot_position > 0:
         folder_name = name[dot_position + 1:]
     else:
         folder_name = "Others"
     organized_files.append((name, folder_name))
-
-
+    
 for filename, target_folder in organized_files:
 
     found = False
