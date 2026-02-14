@@ -35,6 +35,11 @@ Bash
 chmod +x install.sh
 ./install.sh
 
+## 🗑️ Uninstall
+To stop the service and remove all configurations:
+```bash
+./uninstall.sh
+
 📂 Categories Supported
 
     Images: .jpg, .png, .gif, .webp, etc.
