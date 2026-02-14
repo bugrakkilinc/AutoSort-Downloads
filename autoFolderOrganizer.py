@@ -19,12 +19,15 @@ CATEGORIES = {
     "Music": ["mp3", "wav", "flac", "ogg"]
 }
 
+
+active_download = any(".part" in f or ".crdownload" in f for f in file_names)
 for name in file_names:
+    if active_download:
+        continue
     
-    if name.endswith(".part") or name.endswith(".crdownload"):
+    if ".part" in name or ".crdownload" in name:
         continue
-    if os.path.exists(os.path.join(BASE_DIR, name + ".part")):
-        continue
+
     dot_position = name.rfind(".")
     if dot_position > 0:
         folder_name = name[dot_position + 1:]
