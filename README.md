@@ -35,7 +35,8 @@ AutoSort-Downloads is a real-time, automated file organizer that keeps your Down
     Setup: Right-click install_windows.bat and Run as Administrator.
 
         This will install the watchdog library and add the script to your Startup folder.
-
+    > [!IMPORTANT]
+> **Windows Users:** During Python installation, make sure to check the **"Add Python to PATH"** box. If you get a `'pip' is not recognized` error, the installer will attempt to fix it using `python -m pip`. If that fails, please reinstall Python and select the PATH option.
 📂 Categories
 Category	Extensions
 Images	.jpg, .png, .gif, .webp, .bmp
