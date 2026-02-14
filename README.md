@@ -1,6 +1,6 @@
-# 🚀 AutoSort-Downloads
-
 A professional, lightweight, and automated file organizer for **Linux** systems. This tool monitors your Downloads folder in real-time and instantly categorizes incoming files into organized subdirectories.
+
+
 
 ## ✨ Features
 * **Real-time Monitoring:** Uses `inotify-tools` to detect new files the moment they finish downloading.
@@ -27,47 +27,13 @@ Bash
 git clone [https://github.com/bugrakkilinc/AutoSort-Downloads.git](https://github.com/bugrakkilinc/AutoSort-Downloads.git)
 cd AutoSort-Downloads
 
-2. Make Scripts Executable
+2. Run the Automated Installer
+
+The installer will automatically detect your file paths, grant necessary permissions, and set up the background service.
 Bash
 
-chmod +x autoFolderOrganizer.py watch_downloads.sh
-
-3. Create & Enable the Systemd Service
-
-To make this run automatically in the background, create a user service:
-
-    Create the directory:
-    Bash
-
-    mkdir -p ~/.config/systemd/user/
-
-    Create the service file:
-    Bash
-
-    nano ~/.config/systemd/user/download-organizer.service
-
-    Paste the following (Replace YOUR_PATH with the actual path, e.g., Desktop/AutoSort-Downloads):
-
-Ini, TOML
-
-[Unit]
-Description=Downloads Folder Auto Organizer
-After=default.target
-
-[Service]
-ExecStart=%h/YOUR_PATH/watch_downloads.sh
-Restart=always
-
-[Install]
-WantedBy=default.target
-
-    Start and enable the service:
-
-Bash
-
-systemctl --user daemon-reload
-systemctl --user enable download-organizer.service
-systemctl --user start download-organizer.service
+chmod +x install.sh
+./install.sh
 
 📂 Categories Supported
 
@@ -79,4 +45,4 @@ systemctl --user start download-organizer.service
 
     Videos & Music: .mp4, .mkv, .mp3, .wav, etc.
 
-Developed by Buğra Kılınç - Computer Engineering Student @ Selçuk University
+Developed by Buğra Küçükkılınç - Computer Engineering Student @ Selçuk University
