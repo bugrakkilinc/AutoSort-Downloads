@@ -7,5 +7,6 @@ DOWNLOADS_DIR=$(xdg-user-dir DOWNLOAD)
 
 inotifywait -m -e close_write --format '%f' "$DOWNLOADS_DIR" | while read NEWFILE
 do
+    sleep 2
     python3 "$PYTHON_SCRIPT"
 done
