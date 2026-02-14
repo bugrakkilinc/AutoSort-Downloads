@@ -55,6 +55,6 @@ chmod +x uninstall.sh
 Run uninstall_windows.bat. It will stop the background process and remove the startup entry.
 👤 Author
 
-Buğra Kılınç Computer Engineering Student at Selçuk University
+Buğra Küçükkılınç Computer Engineering Student at Selçuk University
 
     GitHub: @bugrakkilinc
