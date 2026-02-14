@@ -1,53 +1,60 @@
-A professional, lightweight, and automated file organizer for **Linux** systems. This tool monitors your Downloads folder in real-time and instantly categorizes incoming files into organized subdirectories.
+# 📂 AutoSort-Downloads
+
+AutoSort-Downloads is a real-time, automated file organizer that keeps your Downloads folder clean by categorizing files into specific folders based on their extensions. It works seamlessly on both **Linux** and **Windows**.
 
 
+
+---
 
 ## ✨ Features
-* **Real-time Monitoring:** Uses `inotify-tools` to detect new files the moment they finish downloading.
-* **Smart Categorization:** Automatically groups files into `Images`, `Documents`, `Archives`, `Videos`, `Music`, and `Others`.
-* **Linux Native & Language Independent:** Uses `xdg-user-dir` to find your Downloads folder regardless of your system language (Turkish, English, etc.).
-* **Conflict Prevention:** Smart renaming logic (e.g., `report_1.pdf`) ensures no files are overwritten if names clash.
-* **Background Service:** Runs silently as a `systemd` user service, starting automatically when you log in.
+- **Real-time Monitoring:** Instantly detects new files and moves them.
+- **Download Safety:** Waits for active downloads (.part, .crdownload) to finish before moving.
+- **Cross-Platform:** Native support for Linux (systemd) and Windows (Startup).
+- **Customizable:** Easily add new categories or extensions in the Python script.
 
-## 🛠️ Requirements
-* **Python 3.x**
-* **inotify-tools:** Required for the real-time watcher.
+---
 
-```bash
-# Arch / CachyOS
-sudo pacman -S inotify-tools
+## 🚀 Installation
 
-# openSUSE
-sudo zypper install inotify-tools
+### 🐧 Linux (Arch, Fedora, Ubuntu, etc.)
+1. **Prerequisites:** Install `inotify-tools`.
+   ```bash
+   sudo pacman -S inotify-tools  # Arch
+   sudo dnf install inotify-tools # Fedora
 
-🚀 Installation & Setup
-1. Clone the Repository
+    Setup: Run the installer script.
+    Bash
+
+    chmod +x install.sh
+    ./install.sh
+
+🪟 Windows
+
+    Prerequisites: Ensure Python is installed and added to PATH.
+
+    Setup: Right-click install_windows.bat and Run as Administrator.
+
+        This will install the watchdog library and add the script to your Startup folder.
+
+📂 Categories
+Category	Extensions
+Images	.jpg, .png, .gif, .webp, .bmp
+Documents	.pdf, .docx, .txt, .xlsx, .csv
+Archives	.zip, .rar, .7z, .tar.gz
+Videos	.mp4, .mkv, .mov, .avi
+Music	.mp3, .wav, .flac
+🗑️ Uninstall
+🐧 Linux
 Bash
 
-git clone [https://github.com/bugrakkilinc/AutoSort-Downloads.git](https://github.com/bugrakkilinc/AutoSort-Downloads.git)
-cd AutoSort-Downloads
-
-2. Run the Automated Installer
-
-The installer will automatically detect your file paths, grant necessary permissions, and set up the background service.
-Bash
-
-chmod +x install.sh
-./install.sh
-
-## 🗑️ Uninstall
-To stop the service and remove all configurations:
-```bash
+chmod +x uninstall.sh
 ./uninstall.sh
 
-📂 Categories Supported
+🪟 Windows
 
-    Images: .jpg, .png, .gif, .webp, etc.
+Run uninstall_windows.bat. It will stop the background process and remove the startup entry.
+👤 Author
 
-    Documents: .pdf, .docx, .txt, .xlsx, etc.
+Buğra Kılınç Computer Engineering Student at Selçuk University
 
-    Archives: .zip, .tar.gz, .rar, .7z, etc.
-
-    Videos & Music: .mp4, .mkv, .mp3, .wav, etc.
-
-Developed by Buğra Küçükkılınç - Computer Engineering Student @ Selçuk University
+    GitHub: @bugrakkilinc
